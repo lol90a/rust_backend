@@ -1,0 +1,10 @@
+/target
+**/*.rs.bk
+Cargo.lock          # remove this line for binary crates if you want lock pinning
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+.DS_Store

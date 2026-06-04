@@ -1,0 +1,14 @@
+# Maximum complexity for a single function.
+cognitive-complexity-threshold = 30
+
+# Minimum number of enum variants before clippy suggests boxing large variants.
+enum-variant-size-threshold = 200
+
+# Enforce explicit lifetimes for clarity in public APIs.
+# (clippy::needless_lifetimes warns on redundant ones – leave defaults)
+
+# Disallow dbg! in committed code.
+disallowed-macros = ["std::dbg"]
+
+# Disallow methods that silently panic.
+disallowed-methods = []

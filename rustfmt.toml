@@ -1,0 +1,19 @@
+edition              = "2021"
+max_width            = 100
+tab_spaces           = 4
+use_small_heuristics = "Default"
+reorder_imports      = true
+reorder_modules      = true
+newline_style        = "Unix"
+match_block_trailing_comma = true
+
+# ── Nightly-only options ──────────────────────────────────────────────────────
+# The options below require `rustfmt +nightly`. They are listed here as
+# documentation of intent; uncomment them when running on nightly:
+#
+# wrap_comments        = true
+# comment_width        = 100
+# normalize_comments   = true
+# imports_granularity  = "Crate"
+# group_imports        = "StdExternalCrate"
+# trailing_comma       = "Vertical"

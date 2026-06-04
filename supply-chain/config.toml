@@ -1,0 +1,12 @@
+# cargo-vet configuration
+# See: https://mozilla.github.io/cargo-vet/
+
+[cargo-vet]
+version = "0.10"
+
+# Trusted registries – all crates from crates.io pass through standard review.
+[[trusted]]
+name    = "crates.io"
+url     = "https://static.crates.io"
+
+# Add audits in supply-chain/audits.toml as you vet each dependency.

@@ -1,0 +1,10 @@
+[default.extend-words]
+# Add project-specific false-positives here, e.g.:
+# "crate" = "crate"
+
+[files]
+extend-exclude = [
+    "target/",
+    "*.lock",
+    "supply-chain/",
+]

@@ -1,0 +1,68 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/app-core",
+    "crates/server",
+]
+
+# ── Shared dependency versions ───────────────────────────────────────────────
+[workspace.dependencies]
+# Async runtime
+tokio          = { version = "1.38", features = ["full"] }
+
+# Web framework (server-only – declared here for version pinning)
+actix-web      = { version = "4.5" }
+actix-cors     = { version = "0.7" }
+
+# Serialization
+serde          = { version = "1.0", features = ["derive"] }
+serde_json     = { version = "1.0" }
+
+# Error handling
+thiserror      = { version = "1.0" }
+anyhow         = { version = "1.0" }
+
+# Observability
+tracing                 = { version = "0.1" }
+tracing-subscriber      = { version = "0.3", features = ["env-filter", "fmt", "json"] }
+tracing-actix-web       = { version = "0.7" }
+
+# Config
+config         = { version = "0.14" }
+
+# Async traits
+async-trait    = { version = "0.1" }
+
+# Unique IDs
+uuid           = { version = "1.8", features = ["v4", "serde"] }
+
+# Date/time
+chrono         = { version = "0.4", features = ["serde"] }
+
+# Validation
+validator      = { version = "0.18", features = ["derive"] }
+
+# HTTP client (infrastructure layer)
+reqwest        = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+
+# In-memory state (example infra adapter)
+dashmap        = { version = "6.0" }
+
+# Futures utilities (re-exported by tokio/actix but needed explicitly)
+futures-util   = { version = "0.3" }
+
+# ── Workspace-wide lints ──────────────────────────────────────────────────────
+[workspace.lints.rust]
+unsafe_code          = "forbid"
+unused_imports       = "warn"
+dead_code            = "warn"
+missing_debug_implementations = "warn"
+
+[workspace.lints.clippy]
+all      = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+# Allow common false-positives in production code
+module_name_repetitions = "allow"
+must_use_candidate      = "allow"
+missing_errors_doc      = "allow"
+missing_panics_doc      = "allow"

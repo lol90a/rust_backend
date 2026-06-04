@@ -1,0 +1,12 @@
+# cargo-vet audits
+# Populate this file as you review dependencies.
+# Example:
+#
+# [[audits.serde]]
+# who   = "you@example.com"
+# when  = "2024-01-01"
+# version = "1.0.195"
+# criteria = "safe-to-deploy"
+# notes   = "Reviewed manually – no unsafe, no network, no FS access."
+
+[criteria]
